@@ -1,0 +1,25 @@
+{
+  "name": "mydaterangepicker",
+  "version": "1.0.0",
+  "description": "myDateRangePicker",
+  "main": "daterangepicker.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "DateRangePicker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BZMBZM123/myDateRangePicker.git"
+  },
+  "keywords": [
+    "myDateRangePicker"
+  ],
+  "author": "BZMBZM123",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BZMBZM123/myDateRangePicker/issues"
+  },
+  "homepage": "https://github.com/BZMBZM123/myDateRangePicker#readme"
+}
