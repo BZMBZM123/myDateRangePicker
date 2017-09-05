@@ -26,6 +26,7 @@
     root.daterangepicker = factory(root.moment, root.jQuery);
   }
 }(this, function(moment, $) {
+  //aa
   window.$ = $;
   var DateRangePicker = function(element,scopeName, options, cb) {
     //default settings for options
