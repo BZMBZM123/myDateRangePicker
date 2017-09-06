@@ -109,7 +109,7 @@
             '</div>' +
             '<div ' + this.scopeName + ' class="calendar right">' +
             '<div ' + this.scopeName + ' class="daterangepicker_input">' +
-            '<span ' + this.scopeName + 'class="chinStart">结束时间:</span>' +
+            '<span ' + this.scopeName + ' class="chinStart">结束时间:</span>' +
             '<input ' + this.scopeName + ' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_end" value="" />' +
             /*'<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +*/
             '<div ' + this.scopeName + ' class="calendar-time">' +
