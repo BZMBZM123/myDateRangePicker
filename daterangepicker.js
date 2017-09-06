@@ -96,9 +96,9 @@
     if (typeof options.template !== 'string' && !(options.template instanceof $))
       options.template = '<div '+this.scopeName+' class="daterangepicker dropdown-menu">' +
       '<div '+this.scopeName+' class="calendar left">' +
-      '<div '+this.scopeName+' class="daterangepicker_input">' +
-      '<input '+this.scopeName+' class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
-      '<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
+      '<div '+this.scopeName+' class="daterangepicker_input"><span class="chinStart">开始时间:</span>' +
+      '<input '+this.scopeName+' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_start" value="" />' +
+      /*'<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +*/
       '<div '+this.scopeName+' class="calendar-time">' +
       '<div '+this.scopeName+'></div>' +
       '<i '+this.scopeName+' class="fa fa-clock-o glyphicon glyphicon-time"></i>' +
@@ -107,9 +107,9 @@
       '<div '+this.scopeName+' class="calendar-table"></div>' +
       '</div>' +
       '<div '+this.scopeName+' class="calendar right">' +
-      '<div '+this.scopeName+' class="daterangepicker_input">' +
-      '<input '+this.scopeName+' class="input-mini form-control" type="text" name="daterangepicker_end" value="" />' +
-      '<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
+      '<div '+this.scopeName+' class="daterangepicker_input"><span class="chinStart">结束时间:</span>' +
+      '<input '+this.scopeName+' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_end" value="" />' +
+      /*'<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +*/
       '<div '+this.scopeName+' class="calendar-time">' +
       '<div '+this.scopeName+'></div>' +
       '<i '+this.scopeName+' class="fa fa-clock-o glyphicon glyphicon-time"></i>' +
