@@ -37,7 +37,7 @@
         this.minDate = false;
         this.maxDate = false;
         this.dateLimit = false;
-        this.autoApply = false;
+        this.autoApply = true;
         this.singleDatePicker = false;
         this.showDropdowns = false;
         this.showWeekNumbers = false;
@@ -97,8 +97,8 @@
             options.template = '<div ' + this.scopeName + ' class="daterangepicker dropdown-menu">' +
             '<div ' + this.scopeName + ' class="calendar left">' +
             '<div ' + this.scopeName + ' class="daterangepicker_input">' +
-            '<span ' + this.scopeName + ' class="chinStart">开始时间:</span>' +
-            '<input ' + this.scopeName + ' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_start" value="" />' +
+            /*'<span ' + this.scopeName + ' class="chinStart">开始时间:</span>' +
+            '<input ' + this.scopeName + ' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_start" value="" />' +*/
             /*'<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +*/
             '<div ' + this.scopeName + ' class="calendar-time">' +
             '<div ' + this.scopeName + '></div>' +
@@ -109,8 +109,8 @@
             '</div>' +
             '<div ' + this.scopeName + ' class="calendar right">' +
             '<div ' + this.scopeName + ' class="daterangepicker_input">' +
-            '<span ' + this.scopeName + ' class="chinStart">结束时间:</span>' +
-            '<input ' + this.scopeName + ' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_end" value="" />' +
+            /*'<span ' + this.scopeName + ' class="chinStart">结束时间:</span>' +
+            '<input ' + this.scopeName + ' class="input-mini form-control" type="text" disabled="disabled" name="daterangepicker_end" value="" />' +*/
             /*'<i '+this.scopeName+' class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +*/
             '<div ' + this.scopeName + ' class="calendar-time">' +
             '<div ' + this.scopeName + '></div>' +
@@ -704,14 +704,14 @@
             html += '<tr  ' + this.scopeName + '>';
 
             // add empty cell for week number
-            if (this.showWeekNumbers || this.showISOWeekNumbers)
+            /*if (this.showWeekNumbers || this.showISOWeekNumbers)
                 html += '<th  ' + this.scopeName + '></th>';
 
             if ((!minDate || minDate.isBefore(calendar.firstDay)) && (!this.linkedCalendars || side == 'left')) {
                 html += '<th  ' + this.scopeName + ' class="prev available"><i class="fa fa-' + arrow.left + ' glyphicon glyphicon-' + arrow.left + '"></i></th>';
             } else {
                 html += '<th ' + this.scopeName + '></th>';
-            }
+            }*/
 
             var dateHtml = this.locale.monthNames[calendar[1][1].month()] + calendar[1][1].format(" YYYY");
 
@@ -745,15 +745,16 @@
                 }
                 yearHtml += '</select>';
 
-                dateHtml = monthHtml + yearHtml;
+                /*dateHtml = monthHtml + yearHtml;*/
+                dateHtml = yearHtml + monthHtml;
             }
 
             html += '<th ' + this.scopeName + ' colspan="5" class="month">' + dateHtml + '</th>';
-            if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker)) {
+            /*if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker)) {
                 html += '<th ' + this.scopeName + ' class="next available"><i class="fa fa-' + arrow.right + ' glyphicon glyphicon-' + arrow.right + '"></i></th>';
             } else {
                 html += '<th ' + this.scopeName + '></th>';
-            }
+            }*/
 
             html += '</tr>';
             html += '<tr ' + this.scopeName + '>';
@@ -1206,6 +1207,7 @@
             var label = e.target.getAttribute('data-range-key');
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
+                this.container.find('.ranges li:last').addClass('displaynone');
                 this.showCalendars();
             } else {
                 var dates = this.ranges[label];
@@ -1216,7 +1218,7 @@
                     this.startDate.startOf('day');
                     this.endDate.endOf('day');
                 }
-
+                this.container.find('.ranges li:last').removeClass('displaynone');
                 if (!this.alwaysShowCalendars)
                     this.hideCalendars();
                 this.clickApply();
