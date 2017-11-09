@@ -1299,7 +1299,7 @@
         },
 
         clickDate: function(e) {
-
+            this.container.find('.ranges li:last').addClass('displaynone');
             if (!$(e.target).hasClass('available')) return;
 
             var title = $(e.target).attr('data-title');
