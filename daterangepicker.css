@@ -3,7 +3,7 @@
     color: inherit;
     background-color: #fff;
     border-radius: 4px;
-    width: 542px;
+    width: 278px;
     padding: 4px;
     margin-top: 1px;
     top: 100px;
@@ -341,7 +341,7 @@
 
 @media (min-width: 564px) {
     .daterangepicker {
-        width: 542px;
+        width: auto;
     }
     .daterangepicker .ranges ul {
         width: 160px;
@@ -427,7 +427,7 @@
 
 @media (min-width: 730px) {
     .daterangepicker .ranges {
-        width: 542px;
+        width: auto;
     }
     .daterangepicker.ltr .ranges {
         float: left;
