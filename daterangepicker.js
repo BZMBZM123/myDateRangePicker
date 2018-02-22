@@ -51,8 +51,14 @@
         this.autoUpdateInput = true;
         this.alwaysShowCalendars = false;
         this.ranges = {};
+        
+        //this.opens = 'left';
+        if (options.direction) {
+            this.opens = options.direction; //时间自定义下拉时显示位置
+        } else {
+            this.opens = 'left';
+        }
 
-        this.opens = 'right';
         if (this.element.hasClass('pull-right'))
             this.opens = 'left';
 
@@ -95,6 +101,15 @@
         //html template for the picker UI
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template = '<div ' + this.scopeName + ' class="daterangepicker dropdown-menu">' +
+
+
+            '<div ' + this.scopeName + ' class="ranges">' +
+            '<div ' + this.scopeName + ' class="range_inputs">' +
+            '<button ' + this.scopeName + ' class="applyBtn" disabled="disabled" type="button"></button> ' +
+            '<button ' + this.scopeName + ' class="cancelBtn" type="button"></button>' +
+            '</div>' +
+            '</div>' +
+
             '<div ' + this.scopeName + ' class="calendar left">' +
             '<div ' + this.scopeName + ' class="daterangepicker_input">' +
             /*'<span ' + this.scopeName + ' class="chinStart">开始时间:</span>' +
@@ -119,12 +134,12 @@
             '</div>' +
             '<div ' + this.scopeName + ' class="calendar-table"></div>' +
             '</div>' +
-            '<div ' + this.scopeName + ' class="ranges">' +
+            /*'<div ' + this.scopeName + ' class="ranges">' +
             '<div ' + this.scopeName + ' class="range_inputs">' +
             '<button ' + this.scopeName + ' class="applyBtn" disabled="disabled" type="button"></button> ' +
             '<button ' + this.scopeName + ' class="cancelBtn" type="button"></button>' +
             '</div>' +
-            '</div>' +
+            '</div>' +*/
             '</div>';
 
         this.parentEl = (options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
